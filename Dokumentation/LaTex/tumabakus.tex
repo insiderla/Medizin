@@ -1,0 +1,50 @@
+% tumabakus.sty
+% 
+% Kommando \abakus{<len>} zur Erzeugung des Abakus (Symbol der
+% Fakultaet fuer Informatik, Technische Universitaet
+% Muenchen). Ergebnis ist eine Box (LaTeX-Picture-Environment).
+%
+% Das Argument <len> gibt die Seitenlaenge des (quadratischen) Symbols
+% an. Es muss eine Laengenangabe sein.
+%
+% Bsp:
+%   \abakus{2.4cm}
+%   \abakus{100pt}
+
+\newcommand{\abakus}[1]{%
+{\unitlength #1
+\unitlength 0.55555\unitlength
+\begin{picture}(1.8,1.8)
+  \thicklines
+  \multiput(0,0)(0.01,0){1}{\line(0,1){1.8}}
+  \multiput(0,0)(0,0.01){1}{\line(1,0){1.8}}
+  \multiput(1.8,0)(-0.01,0){1}{\line(0,1){1.8}}
+  \multiput(0,1.8)(0,-0.01){1}{\line(1,0){1.8}}
+  \multiput(0,1.2)(0,0.01){1}{\line(1,0){1.8}}
+
+  \put(0.36,0){\line(0,1){0.115}}
+  \put(0.36,0.285){\line(0,1){0.03}}
+  \put(0.72,0){\line(0,1){0.315}}
+  \put(0.72,0.685){\line(0,1){0.03}}
+  \put(1.44,0.485){\line(0,1){0.23}}
+  \put(0.36,1.085){\line(0,1){0.43}}
+  \put(0.36,1.685){\line(0,1){0.115}}
+
+  \multiput(0.36,0.485)(0.36,0){3}{\line(0,1){0.03}}
+  \multiput(0.36,0.685)(0.72,0){2}{\line(0,1){0.23}}
+  \multiput(0.72,0.885)(0.72,0){2}{\line(0,1){0.03}}
+  \multiput(1.08,0)(0.36,0){2}{\line(0,1){0.115}}
+  \multiput(1.08,0.285)(0.36,0){2}{\line(0,1){0.03}}
+  \multiput(0.72,1.085)(0.36,0){3}{\line(0,1){0.23}}
+  \multiput(0.72,1.485)(0.36,0){3}{\line(0,1){0.315}}
+
+  \multiput(0.36,1.0)(0.36,0){4}{\circle{0.17}}
+  \multiput(0.36,0.2)(0,0.2){3}{\circle{0.17}}
+  \multiput(0.72,0.4)(0,0.2){3}{\circle{0.17}}
+  \multiput(1.08,0.2)(0,0.2){3}{\circle{0.17}}
+  \multiput(1.44,0.2)(0,0.2){2}{\circle{0.17}}
+  \put(1.44,0.8){\circle{0.17}}
+  \multiput(0.72,1.4)(0.36,0){3}{\circle{0.17}}
+  \put(0.36,1.6){\circle{0.17}}
+\end{picture}}}
+

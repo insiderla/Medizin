@@ -1,0 +1,101 @@
+
+
+\documentclass[12pt,liststotoc]             % Schriftgr??e
+               {scrreprt}          % Typ des Dokuments = Report
+\usepackage{a4}                  % A4 basierter Seiten-Layout
+\usepackage{german}              % Einstellungen f?r deutsche Sprache
+\usepackage{amsmath}
+\usepackage{epic}                % Enhancement to Picture Environments
+\usepackage{parskip}             % statt Einruecken von Absaetzen Zeilenvorschub
+\usepackage[latin1]{inputenc}              % Eingabe von Umlauten als ?,?,?,?
+\usepackage{makeidx}             % Erstellen eines Stichwortregisters
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{framed,color}
+
+
+
+\usepackage{shadethm}
+
+\definecolor{shadecolor}{gray}{.65}
+\newshadetheorem{thms}{}
+\newshadetheorem{definitions}{Definition}[chapter]
+
+
+\newenvironment{thm}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{10.0,10.0,10.0}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  \setlength{\shadeboxrule}{1.5pt}%
+  \begin{thms}[#1]\hspace*{1mm}%
+}{\end{thms}}
+
+\newenvironment{definition}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  \setlength{\shadeboxrule}{1.5pt}%
+  \begin{definitions}[#1]\hspace*{1mm}%
+}{\end{definitions}}
+
+
+\renewcommand{\algorithmicensure}{\textbf{returns}}
+\renewcommand{\algorithmicrequire}{\textbf{inputs:}}
+\renewcommand{\algorithmicendif}{}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+\renewcommand{\algorithmicendfor}{}
+\renewcommand{\algorithmicwhile}{\textbf{repeat until}}
+\renewcommand{\algorithmicendwhile}{}
+
+
+
+\makeindex                       % Initialisierung fuer Stichwortverzeichnis
+\frenchspacing                   % Unterdrueckt zusaetzlichen Leerraum nach Satzzeichen
+\sloppy                          % mehr Trennungen erlauben ...
+
+\pagestyle{headings}             % Seitenunter- und ?berschriften
+
+\textwidth16cm                   % Vorgegebene Textbreite einer Seite
+\textheight23cm                  % Vorgegebene Texthoehe einer Seite
+
+\topmargin0cm
+\oddsidemargin0cm
+\evensidemargin0cm
+
+
+\begin{document}
+
+
+
+
+  \nocite{*}                     % Auch nicht referenzierte Literaturangaben ins
+                                 % Literaturverzeichnis aufnehmen
+
+	\input{Titelseiten}
+
+  \bibliographystyle{alpha}      % Stil fuer Literaturzitate
+  \setcounter{tocdepth}{2}       % auf Wunsch bis zu 3 Ebenen im 
+  \setcounter{secnumdepth}{3}    % Inhaltsverzeichnis!
+  \setcounter{page}{1}           % ab hier Seitennumerierung mit 1
+
+  %\psfull                        % ps/eps-Dateien wirklich importieren?
+  % \psdraft                     % Oder nur die BoundingBox benutzen?
+  %\pssilent                      % keine Meldungen ueber ps/eps-Import
+
+  \fboxsep 0mm                   % kein Abstand zwischen Rahmen und Bild?
+	
+	
+ %	\input{Zusammenfassung}
+	
+	
+	%\input{Zusammenfassung}
+
+\pagenumbering{Roman}
+
+\section*{Zusammenfassung}
+
+
+ 
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
